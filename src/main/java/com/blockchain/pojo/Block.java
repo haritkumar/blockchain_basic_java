@@ -40,10 +40,9 @@ public class Block {
 	public void mineBlock(int difficulty) {
 		String target = CommonUtil.getDificultyString(difficulty); //Create a string with difficulty * "0" 
 		while(!hash.substring( 0, difficulty).equals(target)) {
-			//System.out.println(hash.substring( 0, difficulty) +" : "+target);
 			nonce ++;
 			hash = calculateHash();
 		}
-		System.out.println("Block Mined!!! : " + hash);
+		System.out.println("Block Mined!!! : " + hash+" nonce: "+nonce);
 	}
 }
